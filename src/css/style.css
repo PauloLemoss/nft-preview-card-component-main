@@ -1,32 +1,26 @@
-
-body{
+body {
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     background-color: hsl(217, 54%, 11%);
     font-family: "Outfit", serif;
-    
+    margin: 0;
 }
 
-.card{
-      width: 100%;
-      background-color: hsl(216, 50%, 16%);
-      max-width: 300px;
-      border-radius: 15px;
-      padding-right: 20px;
-      padding-left: 10px;
-      margin-top: 20px;
-      
+.card {
+    width: 100%;
+    max-width: 300px;
+    background-color: hsl(216, 50%, 16%);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.card-information{
+.card-information {
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 450px;
-   
-    
 }
 
 .image-container {
@@ -38,118 +32,118 @@ body{
 }
 
 
-
-.image-equilibrium{
-    width: 100%;
-    max-width: 270px;
-    padding: 20px;
-    border-radius: 25px;
-    margin-left: 0px;
-    transition: opacity 0.3s ease; 
-}
-
-
- .icon-view{
-      width: 50px;
+.image-container::before {
+    content: '';
     position: absolute;
-    margin-left: 130px;
-    margin-top: -180px;
-    opacity: 0;
-    transition: opacity 0.3s ease; /
-     
-}
-
-.icon-view:hover{
-    opacity: 1.0;
-}
-
-.image-equilibrium:hover{
-     
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 255, 255, 0.7); 
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    border-radius: 15px; 
 }
 
 
+.image-equilibrium {
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
 
-.title-equilibrium{
+.icon-view {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; 
+    transition: opacity 0.3s ease;
+    z-index: 2; 
+}
+
+
+.image-container:hover::before {
+    opacity: 1; 
+}
+
+.image-container:hover .icon-view {
+    opacity: 1;
+}
+
+.image-container:hover .image-equilibrium {
+    transform: scale(1.05);
+}
+
+.title-equilibrium {
     color: white;
     font-size: 20px;
-    padding: 10px;
-    margin-left: 10px;
+    padding: 10px 0;
+    margin: 0;
 }
 
-.title-equilibrium:hover{
+.title-equilibrium:hover {
     cursor: pointer;
     color: cyan;
     transition: 0.3s ease-in-out;
 }
 
-.paragraph-equilibrium{
+.paragraph-equilibrium {
     font-size: 18px;
     color: hsl(215, 51%, 70%);
-    width: 100%;
-    max-width: 320px;
-    padding: 15px;
+    margin: 15px 0;
 }
 
- .icons{
+.icons {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 10px;
-  
-    
+    padding: 10px 0;
 }
 
-.icon-ethereum{
-    
+.icon-ethereum,
+.icon-clock {
     display: flex;
     gap: 10px;
 }
 
-.icon-clock{
-    display: flex;
-    gap: 10px;
-}
- .icon-text-etherum{
+.icon-text-etherum {
     color: hsl(178, 100%, 50%);
     font-size: 14px;
-    
-    
 }
 
-.icon-text-clock{
+.icon-text-clock {
     color: hsl(215, 51%, 70%);
     font-size: 14px;
-   
-} 
-
-hr{
-    margin: 10px;
-    border: 1px solid   hsl(215, 32%, 27%)
 }
- 
 
-.name-image-creator{
+hr {
+    margin: 20px 0;
+    border: 1px solid hsl(215, 32%, 27%);
+}
+
+.name-image-creator {
     display: flex;
     align-items: center;
 }
 
-.image-avatar{
+.image-avatar {
     width: 35px;
     border: 1px solid white;
     border-radius: 50%;
-    margin: 15px;
+    margin-right: 15px;
 }
 
-.name-creator{
+.name-creator {
     color: white;
-    margin: 10px;
 }
 
-.dark-blue-strong{
-    color: hsl(215, 51%, 70%);;
+.dark-blue-strong {
+    color: hsl(215, 51%, 70%);
 }
 
-.cyan-text:hover{
+.cyan-text:hover {
     color: cyan;
     transition: 0.3s ease-in-out;
 }
